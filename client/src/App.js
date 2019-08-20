@@ -7,7 +7,8 @@ import User from './Dashboard/user'
 import Restaurent from './Dashboard/restaurent'
 import Safe from './Dashboard/safe'
 import DelieveryBoy from './Dashboard/delieveryBoy';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import PrivateRoute from './Helper/privateRoute'
 
 
 const  NotFound = ()=>(
@@ -28,10 +29,10 @@ class App extends Component{
                  <Switch>
                      <Route path = "/auth/signup" component = {SignUp} />
                      <Route path = "/auth/signin" component = {SignIn} />
-                     <Route path = "/dash/user" component =   {User} />
-                     <Route path = "/dash/restaurent" component = {Restaurent} />
-                     <Route path = "/dash/pickup" component = {DelieveryBoy} />
-                     <Route path = "/dash/user" component =   {Safe} />
+                     <PrivateRoute path = "/dash/user" component ={User}/>
+                     <PrivateRoute path = "/dash/restaurent" component = {Restaurent} />
+                     <PrivateRoute path = "/dash/pickup" component = {DelieveryBoy} />
+                     <PrivateRoute path = "/dash/user" component =   {Safe} />
                      <Route path ="*" component ={NotFound}/>
                  </Switch>
              </Router>  
