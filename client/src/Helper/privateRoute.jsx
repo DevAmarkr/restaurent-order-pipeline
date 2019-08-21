@@ -4,10 +4,10 @@ import {connect} from 'react-redux'
 
 
 const PrivateRoute = ({component:Component,isSignedIn,...rest})=>{
-  // console.log(props)
+ 
   return (
       <Route  {...rest} render = {props=>
-      
+        
         isSignedIn? (
         <Component {...props}/>
         ):(
@@ -25,4 +25,4 @@ const MapStateToProps = (state)=>{
   return {isSignedIn:state.auth.isSignedIn}
 }
 
-export default connect(MapStateToProps,null)(PrivateRoute )
+export default connect(MapStateToProps,null)(PrivateRoute)

@@ -41,6 +41,7 @@ class App extends Component{
     }
 }
 const MapStateToProps = (state)=>{
-    return {isSignedIn:state.auth.isSignedIn,role:state.auth.userRoles}
+    // return {isSignedIn:state.auth.isSignedIn,role:state.auth.userRoles}
+    console.log(state,'store')
 }
 export default connect(MapStateToProps,null)(App)
